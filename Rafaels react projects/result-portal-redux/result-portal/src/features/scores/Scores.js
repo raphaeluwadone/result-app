@@ -9,10 +9,7 @@ import Fetch from "../../Fetch";
 import { ClapSpinner } from "react-spinners-kit";
 import { secondCourseList } from "../secondSemester/secondSlice";
 import { firstCourseList } from "../firstSemester/firstSlice";
-
-
-
-
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 
 function Scores() {
@@ -135,7 +132,7 @@ function Scores() {
     console.log(JSON.stringify(finalBody));
     
       try {
-        const finale = await Fetch("https://intellisystem.herokuapp.com/result", "post", finalBody, false, true)
+        const finale = await Fetch("https://intellibytes.herokuapp.com/result", "post", finalBody, false, true)
         setPdfLink(finale.response)
         // console.log(finale.response);
         setPostProcess(true)
@@ -471,9 +468,9 @@ function Scores() {
           <ProcessButton onClick={process}>{loading ?  <ClapSpinner size={20} color="#fff" loading={loading} />: "Process"}</ProcessButton>
         </ButtonContainer> :
         <ResultPane>
-          {pdfLink ? <a href='' onClick={reRoute}>PDF IS READY!</a> : <span onClick={()=> {
+          {pdfLink ? <span href='' onClick={reRoute}>PDF IS READY!</span> : <span style={{background: '#ed4f32'}} onClick={()=> {
             errorReRoute()
-          }}>error</span>}
+          }}> <AiOutlineArrowLeft style={{marginRight: '5px'}}/>Error, click to go back</span>}
         </ResultPane>
       }
     </Container>

@@ -9,7 +9,7 @@ const firstSlice = createSlice({
     initialState,
     reducers: {
         firstCourseList: (state, { payload } ) => {
-            state.firstSemesterCourses = [...payload]
+            state.firstSemesterCourses = payload
         }
     }
 });
