@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { inputedData } from "./scoresSlice";
-import img from "../../assets/Frame1.png";
+// import img from "../../assets/Frame1.png";
 import "./Scores.css";
 import Fetch from "../../Fetch";
 import { ClapSpinner } from "react-spinners-kit";
@@ -480,7 +480,7 @@ function Scores() {
 export default Scores;
 
 const Container = styled.div`
-  background-image: url(${img});
+  background-image: url('https://res.cloudinary.com/rafael-uwadone/image/upload/v1619192172/intellisystem/Frame1_gu6jao.png');
   background-size: cover;
   background-position: center;
   width: 100%;

@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import { firstCourseList } from './features/firstSemester/firstSlice'
 import { secondCourseList } from './features/secondSemester/secondSlice'
-import mainBg from './assets/Frame2.png'
+// import mainBg from './assets/Frame2.png'
 
 
 import './App.css';
@@ -87,7 +87,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-image: url(${mainBg});
+  background-image: url('https://res.cloudinary.com/rafael-uwadone/image/upload/v1619192149/intellisystem/Frame2_ieyvzr.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
