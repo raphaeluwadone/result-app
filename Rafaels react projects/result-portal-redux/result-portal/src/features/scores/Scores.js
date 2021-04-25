@@ -595,12 +595,21 @@ const InfoContainer = styled.div`
   margin-bottom: 30px;
   font-size: 20px;
   color: #28135c;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px
+  }
+
+  @media screen and (max-width: 468px) {
+    font-size: 10px
+  }
 `;
 
 const FirstSemesterCourses = styled.div`
   form {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   
     label {
       color: #ffc800;
@@ -616,6 +625,7 @@ const SecondSemesterCourses = styled.div`
   form {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 50px;
   
     label {
@@ -624,6 +634,15 @@ const SecondSemesterCourses = styled.div`
       margin-top: -5px;
       font-weight: bolder;
       text-shadow: 2px 2px 1px black;
+
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: 468px) {
+        font-size: 10px;
+        font-weight: lighter;
+      }
     }
   }
 `;

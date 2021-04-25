@@ -54,6 +54,11 @@ const Container = styled.div`
         height: 20vh;
     }
 
+    @media screen and (max-width: 375px) {
+        height: 180px;
+        font-size: 18px;
+    }
+
     form {
         width: 80%;
         margin: 0 auto;
@@ -82,6 +87,10 @@ const Container = styled.div`
             @media screen and (max-width: 768px) {
                 width: 90px;
                 height: 30px;
+            }
+
+            @media screen and (max-width: 375px) {
+                margin-top: 5px;
             }
         }
     }
