@@ -105,7 +105,7 @@ const Btn = styled.button`
   cursor: pointer;
   border: 1px solid #2589bd;
   background: #2589bd;
-  margin-top: -80px;
+  // margin-top: -80px;
   // background: #28145C;
 
   :focus{

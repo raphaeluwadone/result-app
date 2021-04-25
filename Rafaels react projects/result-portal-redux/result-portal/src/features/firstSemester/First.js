@@ -47,6 +47,14 @@ const Container = styled.div`
     font-weight: bolder;
     text-shadow: 2px 2px 1px black;
 
+    @media screen and (max-width: 768px) {
+        height: 30vh;
+    }
+
+    @media screen and (max-width: 468px) {
+        height: 20vh;
+    }
+
     form {
         width: 80%;
         margin: 0 auto;
@@ -70,6 +78,11 @@ const Container = styled.div`
                 transform: scale(1.01);
                 border: 2px solid #EBBA54;
                 box-shadow: 0px 3px 15px rgba(255,255,255,0.2);
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 90px;
+                height: 30px;
             }
         }
     }

@@ -68,12 +68,26 @@ const Container = styled.div`
     height: 20vh;
     padding: 0 50px;
 
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
+
+    @media screen and (max-width: 468px) {
+        // margin-bottom: 100px;
+        padding: 0;
+    }
+
     h4 {
         color: #ffc800;
         font-size: 22px;
         margin-top: -5px;
         font-weight: bolder;
         text-shadow: 2px 2px 3px black;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 18px;
+        }
+
     }
 `
 const SelectorContainer = styled.div`
@@ -82,8 +96,14 @@ const SelectorContainer = styled.div`
     max-width: 95%;
     margin: 60px auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    
+
+    @media screen and (max-width: 468px) {
+        width: 100%;
+    }
 `
 
 const ProgrammeContainer = styled.div`
@@ -92,7 +112,7 @@ const ProgrammeContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    // background: #ff3;
+    
     
 
 
@@ -106,6 +126,11 @@ const ProgrammeContainer = styled.div`
         :focus {
             outline: none;
         }
+
+        @media screen and (max-width: 1000px){
+            padding: 5px;
+            font-size: 12px;
+        }
     }
 `
 
@@ -115,7 +140,7 @@ const SemesterContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    // background: #ff3;
+
 
 
 
@@ -128,6 +153,11 @@ const SemesterContainer = styled.div`
 
         :focus {
             outline: none;
+        }
+
+        @media screen and (max-width: 1000px){
+            padding: 5px;
+            font-size: 12px;
         }
     }
 
@@ -142,6 +172,10 @@ const SessionContainer = styled.div`
     justify-content: space-between;
     // background: #ff3;
 
+    @media screen and (max-width: 1000px){
+        margin: 10px 0;
+    }
+
 
 
     select{
@@ -154,6 +188,11 @@ const SessionContainer = styled.div`
         :focus {
             outline: none;
         }
+
+        @media screen and (max-width: 1000px){
+            padding: 5px;
+            font-size: 12px;
+        }
     }
 
 `
@@ -165,6 +204,7 @@ const SeasonContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     // background: #ff3;
+    
 
 
 
@@ -177,6 +217,11 @@ const SeasonContainer = styled.div`
 
         :focus {
             outline: none;
+        }
+
+        @media screen and (max-width: 1000px){
+            padding: 5px;
+            font-size: 12px;
         }
     }
 `
