@@ -122,6 +122,7 @@ const ProgrammeContainer = styled.div`
         background: white;
         cursor: pointer;
         font-size: 16px;
+        font-weight: bold;
 
         :focus {
             outline: none;
@@ -150,6 +151,7 @@ const SemesterContainer = styled.div`
         background: white;
         cursor: pointer;
         font-size: 16px;
+        font-weight: bold;
 
         :focus {
             outline: none;
@@ -184,6 +186,7 @@ const SessionContainer = styled.div`
         background: white;
         cursor: pointer;
         font-size: 16px;
+        font-weight: bold;
 
         :focus {
             outline: none;
@@ -214,6 +217,7 @@ const SeasonContainer = styled.div`
         background: white;
         cursor: pointer;
         font-size: 16px;
+        font-weight: bold;
 
         :focus {
             outline: none;

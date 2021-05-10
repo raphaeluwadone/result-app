@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import { firstCourseList } from './features/firstSemester/firstSlice'
 import { secondCourseList } from './features/secondSemester/secondSlice'
-// import mainBg from './assets/Frame2.png'
+import mainBg from './assets/Frame2.jpg'
 
 
 import './App.css';
@@ -19,6 +19,8 @@ function App() {
   const inputValue = useRef([])
   const secInputValue = useRef([])
   const [double, setDouble] = useState(true) 
+  const [firstCourses, setFirstCourses] = useState([])
+  const [secondCourses, setSecondCourses] = useState([])
   const dispatch = useDispatch()
   
   const inpVal = (el) => {
@@ -36,20 +38,20 @@ function App() {
   }
 
   const process = () => {
-   const newValue = inputValue.current.map(inp => {
-     if(inp === ""){
-       return 
-     }
-      return inp.value
-    })
-    const secNewValue = secInputValue.current.map(inp => {
-      if (inp === ""){
-        return 
-      }
-      return inp.value
-    })
-    dispatch(firstCourseList(newValue))
-    dispatch(secondCourseList(secNewValue))
+  //  const newValue = inputValue.current.map(inp => {
+  //    if(inp === ""){
+  //      return 
+  //    }
+  //     return inp.value
+  //   })
+  //   const secNewValue = secInputValue.current.map(inp => {
+  //     if (inp === ""){
+  //       return 
+  //     }
+  //     return inp.value
+  //   })
+    dispatch(firstCourseList(firstCourses))
+    dispatch(secondCourseList(secondCourses))
     // console.log(courseList);
   }
 
@@ -63,8 +65,8 @@ function App() {
         <Container className='home'>
           <Route path='/' exact>
             <Info showDouble={showDouble}/>
-            <First inpVal={inpVal}/>
-            { double && <Second secInp={secInp}/> }
+            <First inpVal={inpVal} firstCourses={firstCourses} setFirstCourses={setFirstCourses}/>
+            { double && <Second secInp={secInp} secCourses={secondCourses} setSecCourses={setSecondCourses}/> }
             <ButtonContainer>
             <Btn onClick={process}>
               <Link to={'/scores'} style={{textDecoration: 'none'}}>
@@ -87,7 +89,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-image: url('https://res.cloudinary.com/rafael-uwadone/image/upload/v1619192149/intellisystem/Frame2_ieyvzr.png');
+  background-image: url(${mainBg});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -21,7 +21,6 @@ export default function Fetch (
       body: Data,
       headers: headers,
     });
-  
     Response.then((data) => {
       if (data.status == 401 || data.statusText == "Unauthorized") {
         localStorage.clear();

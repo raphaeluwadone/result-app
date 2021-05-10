@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { inputedData } from "./scoresSlice";
-// import img from "../../assets/Frame1.png";
+import img from "../../assets/Frame1.jpg";
 import "./Scores.css";
 import Fetch from "../../Fetch";
 import { ClapSpinner } from "react-spinners-kit";
@@ -129,17 +129,23 @@ function Scores() {
       info,
       data
     }
-    console.log(JSON.stringify(finalBody));
     
       try {
         const finale = await Fetch("https://intellibytes.herokuapp.com/result", "post", finalBody, false, true)
-        setPdfLink(finale.response)
-        // console.log(finale.response);
-        setPostProcess(true)
-        setLoading(false)
+        // setPdfLink(finale.response)
+        console.log(finale.response);
+        if(finale){
+          finale.response.status == "failure" ? setErrorMessage(finale.response.error) : setPdfLink(finale.response.file_url)
+          setPostProcess(true)
+          setLoading(false)
+        } else {
+          setErrorMessage('No Internet Connection')
+          setPostProcess(true)
+          setLoading(false)
+        }
       } catch (error) {
         setPostProcess(true)
-        // setErrorMessage(error.message)
+        setErrorMessage(`${error.message} due to poor connection` )
         console.log(error.message);
         setLoading(false)
       }
@@ -161,17 +167,22 @@ function Scores() {
       window.location = "/"
     }
   
-    useEffect(() => {
-      const ProcessTimer = setTimeout(() => {
-        setPostProcess(false);
-        setErrorMessage('')
-        // history.push("/")
-      }, 4000);
-      return () => {
-        clearTimeout(ProcessTimer);
-      };
+    // useEffect(() => {
+    //   const ProcessTimer = setTimeout(() => {
+    //     setPostProcess(false);
+    //     setErrorMessage('')
+    //     setFirstObj({})
+    //     setSecObj({})
+    //     dispatch(firstCourseList([]))
+    //     dispatch(secondCourseList([]))
+    //     // window.location = "/"
+    //     history.push("/")
+    //   }, 5000);
+    //   return () => {
+    //     clearTimeout(ProcessTimer);
+    //   };
       
-    }, [errorMessage])
+    // }, [errorMessage])
 
   return (
     <Container className="scores">
@@ -470,7 +481,7 @@ function Scores() {
         <ResultPane>
           {pdfLink ? <span href='' onClick={reRoute}>PDF IS READY!</span> : <span style={{background: '#ed4f32'}} onClick={()=> {
             errorReRoute()
-          }}> <AiOutlineArrowLeft style={{marginRight: '5px'}}/>Error, click to go back</span>}
+          }}> <AiOutlineArrowLeft style={{marginRight: '5px'}}/>{errorMessage}, click to go back</span>}
         </ResultPane>
       }
     </Container>
@@ -480,7 +491,7 @@ function Scores() {
 export default Scores;
 
 const Container = styled.div`
-  background-image: url('https://res.cloudinary.com/rafael-uwadone/image/upload/v1619192172/intellisystem/Frame1_gu6jao.png');
+  background-image: url(${img});
   background-size: cover;
   background-position: center;
   width: 100%;
