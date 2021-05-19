@@ -5,16 +5,19 @@ import { secondCourseList } from './secondSlice';
 import { courses } from '../../Courses'
 
 function Second({secInp, secCourses, setSecCourses}) {
-    const dispatch = useDispatch()
+
+
     const courseValue = (e) => {
-        setSecCourses([...secCourses, e.target.value])
+        let {name, value} = e.target
+        setSecCourses({...secCourses, [name]: value})
     }
+
     return (
         <Container>
             <div className="courses">
                 <div>
                     <h4>Course A</h4>
-                    <select name="first" onChange={courseValue}>
+                    <select name="a" onChange={courseValue}>
                         <option value="">Code</option>
                         {courses.map(code => (
                             <option value={code}>{code}</option>
@@ -24,7 +27,7 @@ function Second({secInp, secCourses, setSecCourses}) {
                 </div>
                 <div>
                     <h4>Course B</h4>
-                    <select name="first" onChange={courseValue}>
+                    <select name="b" onChange={courseValue}>
                         <option value="">Code</option>
                         {courses.map(code => (
                             <option value={code}>{code}</option>
@@ -34,7 +37,7 @@ function Second({secInp, secCourses, setSecCourses}) {
                 </div>
                 <div>
                     <h4>Course C</h4>
-                    <select name="first" onChange={courseValue}>
+                    <select name="c" onChange={courseValue}>
                         <option value="">Code</option>
                         {courses.map(code => (
                             <option value={code}>{code}</option>
@@ -44,7 +47,7 @@ function Second({secInp, secCourses, setSecCourses}) {
                 </div>
                 <div>
                     <h4>Course D</h4>
-                    <select name="first" onChange={courseValue}>
+                    <select name="d" onChange={courseValue}>
                         <option value="">Code</option>
                         {courses.map(code => (
                             <option value={code}>{code}</option>
@@ -54,7 +57,7 @@ function Second({secInp, secCourses, setSecCourses}) {
                 </div>
                 <div>
                     <h4>Course E</h4>
-                    <select name="first" onChange={courseValue}>
+                    <select name="e" onChange={courseValue}>
                         <option value="">Code</option>
                         {courses.map(code => (
                             <option value={code}>{code}</option>
@@ -64,14 +67,14 @@ function Second({secInp, secCourses, setSecCourses}) {
                 </div>
                 <div>
                     <h4>Course F</h4>
-                    <select name="first" onChange={courseValue}>
+                    <select name="f" onChange={courseValue}>
                         <option value="">Code</option>
                         {courses.map(code => (
                             <option value={code}>{code}</option>
                         ))}
                     </select>
 
-                </div>   
+                </div> 
             </div>
         </Container>
     )

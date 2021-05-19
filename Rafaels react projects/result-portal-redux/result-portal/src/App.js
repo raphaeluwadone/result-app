@@ -19,8 +19,8 @@ function App() {
   const inputValue = useRef([])
   const secInputValue = useRef([])
   const [double, setDouble] = useState(true) 
-  const [firstCourses, setFirstCourses] = useState([])
-  const [secondCourses, setSecondCourses] = useState([])
+  const [firstCourses, setFirstCourses] = useState({})
+  const [secondCourses, setSecondCourses] = useState({})
   const dispatch = useDispatch()
   
   const inpVal = (el) => {
@@ -38,20 +38,23 @@ function App() {
   }
 
   const process = () => {
-  //  const newValue = inputValue.current.map(inp => {
-  //    if(inp === ""){
-  //      return 
-  //    }
-  //     return inp.value
-  //   })
-  //   const secNewValue = secInputValue.current.map(inp => {
-  //     if (inp === ""){
-  //       return 
-  //     }
-  //     return inp.value
-  //   })
-    dispatch(firstCourseList(firstCourses))
-    dispatch(secondCourseList(secondCourses))
+    const newSecList = []
+    const newFirstList = []
+
+    if(secondCourses){
+      for(const key in secondCourses){
+        newSecList.push(secondCourses[key])
+      }
+    }
+
+    if(firstCourses){
+      for(const key in firstCourses){
+        newFirstList.push(firstCourses[key])
+      }
+    }
+
+    dispatch(firstCourseList(newFirstList))
+    dispatch(secondCourseList(newSecList))
     // console.log(courseList);
   }
 
