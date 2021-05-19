@@ -92,7 +92,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-image: url(${mainBg});
+  background-image: url("https://res.cloudinary.com/rafael-uwadone/image/upload/v1621454999/intellisystem/Frame2_mxlnw1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

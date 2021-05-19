@@ -491,7 +491,7 @@ function Scores() {
 export default Scores;
 
 const Container = styled.div`
-  background-image: url(${img});
+  background-image: url("https://res.cloudinary.com/rafael-uwadone/image/upload/v1621455002/intellisystem/Frame1_w2r0az.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
