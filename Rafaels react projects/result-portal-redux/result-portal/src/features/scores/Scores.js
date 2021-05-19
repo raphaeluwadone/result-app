@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { inputedData } from "./scoresSlice";
-import img from "../../assets/Frame1.jpg";
 import "./Scores.css";
 import Fetch from "../../Fetch";
 import { ClapSpinner } from "react-spinners-kit";

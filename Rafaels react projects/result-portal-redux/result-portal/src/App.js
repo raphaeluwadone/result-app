@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import { firstCourseList } from './features/firstSemester/firstSlice'
 import { secondCourseList } from './features/secondSemester/secondSlice'
-import mainBg from './assets/Frame2.jpg'
+
 
 
 import './App.css';
