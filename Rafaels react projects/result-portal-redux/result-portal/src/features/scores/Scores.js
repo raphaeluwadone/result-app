@@ -18,6 +18,9 @@ function Scores() {
   const secondList = useSelector(
     (state) => state.secondSemester.secondSemesterCourses
   );
+  const usersList = useSelector(
+    (state) => state.score.finalInfo
+  );
   const info = useSelector((state) => state.finalData.information);
   const dispatch = useDispatch();
   const selector = useRef([]);
@@ -81,8 +84,6 @@ function Scores() {
       });
       console.log(firstObj);
       console.log(secObj);
-      // handleFirstDropdown()
-      // handleSecDropdown()
       dispatch(
         inputedData({
           id: { name, reg: num },
@@ -101,6 +102,7 @@ function Scores() {
       setSuccessAlert(true);
       setSecObj({});
       setFirstObj({});
+      console.log(usersList);
     } else setWarningAlert(true);
   };
 
@@ -165,23 +167,7 @@ function Scores() {
       dispatch(secondCourseList([]))
       window.location = "/"
     }
-  
-    // useEffect(() => {
-    //   const ProcessTimer = setTimeout(() => {
-    //     setPostProcess(false);
-    //     setErrorMessage('')
-    //     setFirstObj({})
-    //     setSecObj({})
-    //     dispatch(firstCourseList([]))
-    //     dispatch(secondCourseList([]))
-    //     // window.location = "/"
-    //     history.push("/")
-    //   }, 5000);
-    //   return () => {
-    //     clearTimeout(ProcessTimer);
-    //   };
-      
-    // }, [errorMessage])
+
 
   return (
     <Container className="scores">
@@ -475,7 +461,7 @@ function Scores() {
         !postProcess ?
         <ButtonContainer>
           <AddButton onClick={addStudent} >Add Student</AddButton>
-          <ProcessButton onClick={process}>{loading ?  <ClapSpinner size={20} color="#fff" loading={loading} />: "Process"}</ProcessButton>
+         {usersList.length > 0 ? <ProcessButton onClick={process}>{loading ?  <ClapSpinner size={20} color="#fff" loading={loading} />: "Process"}</ProcessButton> : ""}
         </ButtonContainer> :
         <ResultPane>
           {pdfLink ? <span href='' onClick={reRoute}>PDF IS READY!</span> : <span style={{background: '#ed4f32'}} onClick={()=> {
