@@ -81,15 +81,15 @@ export default Info
 
 const Container = styled.div`
     height: 20vh;
-    padding: 0 50px;
+    /* padding: 0 50px; */
     /* background-color: red; */
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 968px) {
         padding: 0;
+        margin-bottom: 100px;
     }
 
     @media screen and (max-width: 468px) {
-        // margin-bottom: 100px;
         padding: 0;
     }
 

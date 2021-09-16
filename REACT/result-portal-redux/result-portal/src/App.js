@@ -98,9 +98,10 @@ const Container = styled.div`
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
+  padding: 30px;
   // margin: 80px auto;
   // padding: 50px;
-  // box-sizing: border-box;
+  box-sizing: border-box;
 `
 
 const Btn = styled.button`

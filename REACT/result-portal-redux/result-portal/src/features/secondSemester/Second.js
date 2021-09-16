@@ -90,7 +90,7 @@ const Container = styled.div`
     text-shadow: 2px 2px 1px black;
 
     @media screen and (max-width: 768px) {
-        height: 30vh;
+        height: 150px;
     }
 
     @media screen and (max-width: 468px) {
